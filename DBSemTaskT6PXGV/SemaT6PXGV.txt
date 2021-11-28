@@ -1,0 +1,11 @@
+Az adatbázis relációs sémálya:
+
+Alkatrész típus [TAzonsoító, Név, Készlet, Hiány]
+Memória [MAzonsoító, Kapacitás, Sebesség, Ár, TAzonsító]
+Processzor [PAzonsoító, Órajel, Magok száma, Szálak száma, PGyártóAzonsoító, TAzonsoító]
+Processzor Gyártó [PGyártóAzonsoító, Név, Gyártási technológia]
+PTelefonszámok [PGyártóAzonsoító, SupportTelefonszám]
+Videókártya [VAzonsoító, Órajel, FogyasztóiÁr, BoltiÁr, Típus, Kapacitás, Sebesség, TAzonsoító]
+VGyártó [VAzonsoító, VGyártóAzonsoító, PiacraKerülés]
+Videókártya Gyártó [VGyártóAzonsoító, Név, Gyártási technológia]
+VTelefonszámok [VGyártóAzonsoító, SupportTelefonszám]
