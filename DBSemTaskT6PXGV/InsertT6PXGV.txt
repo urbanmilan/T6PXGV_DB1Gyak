@@ -1,0 +1,72 @@
+BEGIN 
+INSERT INTO Alkatresz_tipus (TAzonosito, Nev, Keszlet, Hiany) VALUES ('0','Memoria','120','0');
+INSERT INTO Alkatresz_tipus (TAzonosito, Nev, Keszlet, Hiany) VALUES ('1','IntelProcesszor','60','0'); 
+INSERT INTO Alkatresz_tipus (TAzonosito, Nev, Keszlet, Hiany) VALUES ('2','NvidaVideokartya','10','1'); 
+INSERT INTO Alkatresz_tipus (TAzonosito, Nev, Keszlet, Hiany) VALUES ('3','AMDVideokartya','5','1');
+INSERT INTO Alkatresz_tipus (TAzonosito, Nev, Keszlet, Hiany) VALUES ('4','AMDProcesszor','50','0'); 
+END;
+
+BEGIN 
+INSERT INTO Memoria (MAzonosito, Kapacitas, Sebesseg, Ár, TAzonosito) VALUES ('0','2GB','3200','4000','0');
+INSERT INTO Memoria (MAzonosito, Kapacitas, Sebesseg, Ár, TAzonosito) VALUES ('1','4GB','3600','9500','0');
+INSERT INTO Memoria (MAzonosito, Kapacitas, Sebesseg, Ár, TAzonosito) VALUES ('2','8GB','3000','14000','0');
+INSERT INTO Memoria (MAzonosito, Kapacitas, Sebesseg, Ár, TAzonosito) VALUES ('3','16GB','3400','20000','0');
+INSERT INTO Memoria (MAzonosito, Kapacitas, Sebesseg, Ár, TAzonosito) VALUES ('4','32GB','3800','28000','0');
+END;
+
+BEGIN 
+INSERT INTO Processzor_gyarto (PGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('0','Intel','10');
+INSERT INTO Processzor_gyarto (PGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('1','AMD','7');
+END;
+
+BEGIN 
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('0','4200','6','12','0','1');
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('1','4000','4','8','1','4');
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('2','3800','16','16','0','1');
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('3','3600','32','64','0','1');
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('4','2900','8','16','1','4');
+INSERT INTO Processzor (PAzonosito, Orajel, Magok_szama, Szalak_szama, PGyartoAzonosito, TAzonosito) VALUES ('5','4600','10','10','1','4');
+END;
+
+BEGIN 
+INSERT INTO PTelefonszamok (SupportTelefonszam, PGyartoAzonosito) VALUES ('06306357869','0');
+INSERT INTO PTelefonszamok (SupportTelefonszam, PGyartoAzonosito) VALUES ('06203692584','1');
+END;
+
+BEGIN 
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('0','3000','120000','200000','GTX_1050','4GB','6400','2');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('1','2800','190000','280000','RX_580','8GB','5900','3');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('2','3600','200000','310000','GTX_1080','12GB','7100','2');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('3','4000','180000','290000','GTX_1070','10GB','7000','2');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('4','5000','100000','140000','RTX_2060','6GB','6400','2');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('5','4500','150000','220000','RX_570','6GB','6400','3');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('6','4300','160000','190000','GTX_1060','8GB','6400','2');
+INSERT INTO Videokartya (VAzonosito, Orajel, FogyasztoiAr, BoltiAr, Tipus, Kapacitas, Sebesseg, TAzonosito) VALUES ('7','2900','210000','320000','RX_590','10GB','6400','3');
+END;
+
+BEGIN 
+INSERT INTO Videokartya_gyarto (VGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('0','AMD','7');
+INSERT INTO Videokartya_gyarto (VGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('1','Nvidia','5');
+INSERT INTO Videokartya_gyarto (VGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('2','Asus','7');
+INSERT INTO Videokartya_gyarto (VGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('3','Gigabite','5');
+INSERT INTO Videokartya_gyarto (VGyartoAzonosito, Nev, Gyartasi_technologia) VALUES ('4','ASrock','7');
+END;
+
+BEGIN 
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('2000-es évek','0','1');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('2000-es évek','0','7');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('1980-as évek','1','6');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('2020-as évek','2','5');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('1990-es évek','4','4');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('1990-es évek','3','3');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('1970-es évek','2','2');
+INSERT INTO VGyarto_gyarto (PiacraKerules, VGyartoAzonosito, VAzonosito) VALUES ('1990-es évek','4','0');
+END;
+
+BEGIN 
+INSERT INTO VTelefonszamok (SupportTelefonszam, VGyartoAzonosito) VALUES ('06304206337','0');
+INSERT INTO VTelefonszamok (SupportTelefonszam, VGyartoAzonosito) VALUES ('06707775632','1');
+INSERT INTO VTelefonszamok (SupportTelefonszam, VGyartoAzonosito) VALUES ('06303427855','2');
+INSERT INTO VTelefonszamok (SupportTelefonszam, VGyartoAzonosito) VALUES ('06204619742','3');
+INSERT INTO VTelefonszamok (SupportTelefonszam, VGyartoAzonosito) VALUES ('06703678749','4');
+END;

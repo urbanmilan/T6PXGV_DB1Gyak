@@ -1,0 +1,70 @@
+create table Alkatresz_tipus(
+TAzonosito number(3) primary key,
+Nev varchar2(255) not null,
+Keszlet number(3),
+Hiany number(1)
+);
+
+create table Memoria(
+MAzonosito number(3) primary key,
+Kapacitas varchar2(255) not null,
+Sebesseg number(4) not null,
+Ár number(6) not null,
+TAzonosito number(3),
+foreign key(TAzonosito) references Alkatresz_tipus(TAzonosito)
+);
+
+create table Processzor_Gyarto(
+PGyartoAzonosito number(3) primary key,
+Nev varchar2(255) not null,
+Gyartasi_technologia number(3) not null
+);
+
+create table Processzor(
+PAzonosito number(3) primary key,
+Orajel number(4) not null,
+Magok_szama number(3) not null,
+Szalak_szama number(3) not null,
+PGyartoAzonosito number(3),
+TAzonosito number(3),
+foreign key(TAzonosito) references Alkatresz_tipus(TAzonosito),
+foreign key(PGyartoAzonosito) references Processzor_Gyarto(PGyartoAzonosito)
+);
+
+create table PTelefonszamok(
+SupportTelefonszam number(11),
+PGyartoAzonosito number(3),
+foreign key(PGyartoAzonosito) references Processzor_Gyarto(PGyartoAzonosito)
+);
+
+create table Videokartya(
+VAzonosito number(3) primary key,
+Orajel number(4) not null,
+FogyasztoiAr number(6) not null,
+BoltiAr number(6) not null,
+Tipus varchar2(255) not null,
+Kapacitas varchar2(255) not null,
+Sebesseg number(4) not null, 
+TAzonosito number(3),
+foreign key(TAzonosito) references Alkatresz_tipus(TAzonosito)
+);
+
+create table Videokartya_gyarto(
+VGyartoAzonosito number(3) primary key,
+Nev varchar2(255) not null,
+Gyartasi_technologia number(3) not null
+);
+
+create table VGyarto_gyarto(
+PiacraKerules varchar2(255) not null,
+VGyartoAzonosito number(3),
+VAzonosito number(3),
+foreign key(VAzonosito) references Videokartya(VAzonosito),
+foreign key(VGyartoAzonosito) references Videokartya_gyarto(VGyartoAzonosito)
+);
+
+create table VTelefonszamok(
+SupportTelefonszam number(11),
+VGyartoAzonosito number(3),
+foreign key(VGyartoAzonosito) references Videokartya_gyarto(VGyartoAzonosito)
+);
