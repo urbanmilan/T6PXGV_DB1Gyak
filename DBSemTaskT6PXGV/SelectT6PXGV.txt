@@ -1,0 +1,56 @@
+1.
+
+SELECT * from Processzor where orajel > 3600
+
+2.
+
+SELECT count(vazonosito) from videokartya where kapacitas = '6GB'
+
+3.
+
+SELECT nev from videokartya_gyarto order by nev asc
+
+4.
+
+SELECT min(ár) from memoria
+
+5.
+
+SELECT max(magok_szama) from processzor
+
+6.
+
+SELECT count(processzor.pgyartoazonosito) as "10nanometeresprocesszorokszama"
+ from processzor
+ join processzor_gyarto on processzor.pgyartoazonosito = processzor_gyarto.pgyartoazonosito
+ where processzor_gyarto.gyartasi_technologia=10
+
+7.
+
+ select alkatresz_tipus.nev, processzor.magok_szama, processzor.orajel, processzor.szalak_szama
+ from alkatresz_tipus inner join processzor on processzor.tazonosito = alkatresz_tipus.tazonosito
+ where processzor.magok_szama >= 10
+
+8.
+
+ select count(tazonosito) as "processzortipusokszama"
+ from alkatresz_tipus
+ where nev like '%Processzor'
+
+9.
+
+ select videokartya_gyarto.nev, vtelefonszamok.supporttelefonszam
+ from videokartya_gyarto full outer join vtelefonszamok 
+ on vtelefonszamok.vgyartoazonosito = videokartya_gyarto.vgyartoazonosito
+ where supporttelefonszam like '630%'
+
+10.
+
+select nev
+from alkatresz_tipus
+where tazonosito=(select tazonosito
+from videokartya 
+where vazonosito = (select vazonosito 
+from vgyarto_gyarto
+where vgyartoazonosito = (select vgyartoazonosito
+from videokartya_gyarto  where nev='Gigabite')))
